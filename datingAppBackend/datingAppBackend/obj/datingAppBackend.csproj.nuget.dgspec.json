@@ -1,25 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "/Users/ronel/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/datingAppBackend.csproj": {}
+    "C:\\proyectos\\MobileDatingApp-BackEnd\\datingAppBackend\\datingAppBackend\\datingAppBackend.csproj": {}
   },
   "projects": {
-    "/Users/ronel/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/datingAppBackend.csproj": {
+    "C:\\proyectos\\MobileDatingApp-BackEnd\\datingAppBackend\\datingAppBackend\\datingAppBackend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/ronel/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/datingAppBackend.csproj",
+        "projectUniqueName": "C:\\proyectos\\MobileDatingApp-BackEnd\\datingAppBackend\\datingAppBackend\\datingAppBackend.csproj",
         "projectName": "datingAppBackend",
-        "projectPath": "/Users/ronel/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/datingAppBackend.csproj",
-        "packagesPath": "/Users/ronel/.nuget/packages/",
-        "outputPath": "/Users/ronel/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/obj/",
+        "projectPath": "C:\\proyectos\\MobileDatingApp-BackEnd\\datingAppBackend\\datingAppBackend\\datingAppBackend.csproj",
+        "packagesPath": "C:\\Users\\ronel\\.nuget\\packages\\",
+        "outputPath": "C:\\proyectos\\MobileDatingApp-BackEnd\\datingAppBackend\\datingAppBackend\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "/Users/ronel/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\ronel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -71,7 +76,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.300/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
