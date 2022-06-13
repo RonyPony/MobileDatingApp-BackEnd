@@ -1,30 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\proyectos\\MobileDatingApp-BackEnd\\datingAppBackend\\datingAppBackend\\datingAppBackend.csproj": {}
+    "/Users/ronel/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/datingAppBackend.csproj": {}
   },
   "projects": {
-    "C:\\proyectos\\MobileDatingApp-BackEnd\\datingAppBackend\\datingAppBackend\\datingAppBackend.csproj": {
+    "/Users/ronel/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/datingAppBackend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\proyectos\\MobileDatingApp-BackEnd\\datingAppBackend\\datingAppBackend\\datingAppBackend.csproj",
+        "projectUniqueName": "/Users/ronel/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/datingAppBackend.csproj",
         "projectName": "datingAppBackend",
-        "projectPath": "C:\\proyectos\\MobileDatingApp-BackEnd\\datingAppBackend\\datingAppBackend\\datingAppBackend.csproj",
-        "packagesPath": "C:\\Users\\ronel\\.nuget\\packages\\",
-        "outputPath": "C:\\proyectos\\MobileDatingApp-BackEnd\\datingAppBackend\\datingAppBackend\\obj\\",
+        "projectPath": "/Users/ronel/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/datingAppBackend.csproj",
+        "packagesPath": "/Users/ronel/.nuget/packages/",
+        "outputPath": "/Users/ronel/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ronel\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/ronel/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -43,6 +38,16 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.5, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
@@ -66,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.300/RuntimeIdentifierGraph.json"
         }
       }
     }

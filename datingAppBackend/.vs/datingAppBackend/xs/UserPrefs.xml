@@ -1,0 +1,32 @@
+﻿<Properties StartupConfiguration="{BDB16777-696C-4482-A9EC-A06946BC5B3C}|Default">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="datingAppBackend/Program.cs">
+    <Files>
+      <File FileName="datingAppBackend/Models/User.cs" Line="5" Column="3" />
+      <File FileName="datingAppBackend/Program.cs" Line="8" Column="44" />
+      <File FileName="datingAppBackend/appsettings.json" Line="4" Column="24" />
+      <File FileName="datingAppBackend/Models/datingContext.cs" Line="2" Column="17" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="datingAppBackend" expanded="True">
+            <Node name="datingAppBackend" expanded="True">
+              <Node name="Models" expanded="True" />
+              <Node name="Program.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.datingAppBackend PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+</Properties>
