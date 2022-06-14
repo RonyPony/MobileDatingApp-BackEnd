@@ -105,7 +105,7 @@ namespace datingAppBackend.Controllers
         }
 
         [HttpPost]
-        [Route("findByEmail")]
+        [Route("findByEmail/{email}")]
         public async Task<ActionResult<User>>findUserByEmail(String email)
         {
             if (email==String.Empty)
