@@ -1,11 +1,12 @@
 ﻿<Properties StartupConfiguration="{BDB16777-696C-4482-A9EC-A06946BC5B3C}|Default">
+  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.Workbench ActiveDocument="datingAppBackend/Controllers/userController.cs">
     <Files>
       <File FileName="datingAppBackend/Models/User.cs" Line="27" Column="1" />
-      <File FileName="datingAppBackend/Program.cs" Line="8" Column="34" />
+      <File FileName="datingAppBackend/Program.cs" Line="36" Column="84" />
       <File FileName="datingAppBackend/Models/datingContext.cs" Line="2" Column="17" />
       <File FileName="datingAppBackend/Controllers/WeatherForecastController.cs" Line="6" Column="16" />
-      <File FileName="datingAppBackend/Controllers/userController.cs" Line="135" Column="23" />
+      <File FileName="datingAppBackend/Controllers/userController.cs" Line="112" Column="14" />
       <File FileName="datingAppBackend/Models/register.cs" Line="16" Column="27" />
       <File FileName="datingAppBackend/Models/changePassword.cs" Line="7" Column="5" />
     </Files>
@@ -25,13 +26,12 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.datingAppBackend PreferredExecutionTarget="/Applications/Safari.app" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/ronel/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/Controllers/userController.cs" relfile="datingAppBackend/Controllers/userController.cs" line="88" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.datingAppBackend PreferredExecutionTarget="/Applications/Safari.app" />
 </Properties>

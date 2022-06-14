@@ -104,6 +104,33 @@ namespace datingAppBackend.Controllers
             return CreatedAtAction("GetUser", new { id = user.id }, user);
         }
 
+        [HttpPost]
+        [Route("findByEmail")]
+        public async Task<ActionResult<User>>findUserByEmail(String email)
+        {
+            if (email==String.Empty)
+            {
+                return BadRequest("Please provide an email address");
+            }
+
+            try
+            {
+                var user = (from x in _context.Users
+                             where x.email == email
+                             select x).FirstOrDefault();
+                if (user==null)
+                {
+                    return NotFound("User not found");
+                }
+
+                return Ok(user);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
+
         // POST: api/login
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
