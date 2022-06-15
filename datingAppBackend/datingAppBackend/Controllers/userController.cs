@@ -98,6 +98,7 @@ namespace datingAppBackend.Controllers
             user.email = userRegister.Email;
             user.Password = userRegister.Password;
             user.lastName = userRegister.lastName;
+            user.bio = "N/A";
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
 
