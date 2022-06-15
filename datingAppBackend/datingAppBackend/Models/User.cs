@@ -18,6 +18,9 @@ namespace datingAppBackend.Models
         [DataType(DataType.Text)]
         [DisplayName("Last Name")]
         public string lastName { get; set; }
+        [DataType(DataType.Text)]
+        [DisplayName("Description")]
+        public string bio { get; set; }
         [Required]
         [DataType(DataType.Text)]
         [DisplayName("Email Address")]
