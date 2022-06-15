@@ -58,7 +58,7 @@ namespace datingAppBackend.Controllers
             {
                 return BadRequest();
             }
-
+            
             _context.Entry(user).State = EntityState.Modified;
 
             try

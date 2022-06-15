@@ -9,6 +9,8 @@ namespace datingAppBackend.Models
         [Key]
         public int id { get; set; }
         [Required]
+        public int countryId { get; set; }
+        [Required]
         [DataType(DataType.Text)]
         [DisplayName("User Name")]
         public string name { get; set; }
@@ -24,7 +26,6 @@ namespace datingAppBackend.Models
         [DataType(DataType.Password)]
         [DisplayName("Password")]
         public string Password { get; set; }
-
         public DateTime lastLogin { get; set; }
     }
 

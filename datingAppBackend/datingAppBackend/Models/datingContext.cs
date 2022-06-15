@@ -9,7 +9,7 @@ namespace datingAppBackend.Models
 
 		}
 		public DbSet<User> Users { get; set; } = null;
-
+		public DbSet<country> Countries { get; set; } = null;
 	}
 }
 
