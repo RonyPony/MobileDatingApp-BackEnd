@@ -52,7 +52,7 @@ namespace datingAppBackend.Controllers
             User destiUser = new User();
             while (!appropiateUserFound)
             {
-                destiUser = getArandomUser(originUser.sexualPreferenceId);
+                destiUser = getArandomUser(originUser);
                 appropiateUserFound = validateFoundUser(destiUser,originUser);
             }
             return await _context.Matches.ToListAsync();
