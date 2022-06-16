@@ -146,6 +146,7 @@ namespace datingAppBackend.Controllers
             }
             var users = (from x in _context.Users
                          where x.email == userLogin.UserEmail
+                         where x.Password == userLogin.Password
                          select x).FirstOrDefault();
 
             int userId = 0;
@@ -153,6 +154,10 @@ namespace datingAppBackend.Controllers
             if (users != null)
             {
                 userId = users.id;
+            }
+            else
+            {
+                return Unauthorized("Wrong information provided");
             }
 
             User user = await _context.Users.FindAsync(userId);
