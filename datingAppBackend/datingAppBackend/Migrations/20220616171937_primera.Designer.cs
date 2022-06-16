@@ -12,8 +12,8 @@ using datingAppBackend.Models;
 namespace datingAppBackend.Migrations
 {
     [DbContext(typeof(datingContext))]
-    [Migration("20220615153847_3499023")]
-    partial class _3499023
+    [Migration("20220616171937_primera")]
+    partial class primera
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -54,6 +54,28 @@ namespace datingAppBackend.Migrations
                     b.ToTable("Countries");
                 });
 
+            modelBuilder.Entity("datingAppBackend.Models.matches", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+
+                    b.Property<int>("finalUserId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("isAcepted")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("originUserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Matches");
+                });
+
             modelBuilder.Entity("datingAppBackend.Models.User", b =>
                 {
                     b.Property<int>("id")
@@ -87,6 +109,9 @@ namespace datingAppBackend.Migrations
                     b.Property<string>("name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("registerDate")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("id");
 

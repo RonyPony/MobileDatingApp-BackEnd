@@ -52,6 +52,48 @@ namespace datingAppBackend.Migrations
                     b.ToTable("Countries");
                 });
 
+            modelBuilder.Entity("datingAppBackend.Models.matches", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+
+                    b.Property<int>("finalUserId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("isAcepted")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("originUserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Matches");
+                });
+
+            modelBuilder.Entity("datingAppBackend.Models.sexualOrientations", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+
+                    b.Property<bool>("enabled")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("SexualOrientations");
+                });
+
             modelBuilder.Entity("datingAppBackend.Models.User", b =>
                 {
                     b.Property<int>("id")
@@ -85,6 +127,15 @@ namespace datingAppBackend.Migrations
                     b.Property<string>("name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("registerDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("sexualOrientationId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("sexualPreferenceId")
+                        .HasColumnType("int");
 
                     b.HasKey("id");
 

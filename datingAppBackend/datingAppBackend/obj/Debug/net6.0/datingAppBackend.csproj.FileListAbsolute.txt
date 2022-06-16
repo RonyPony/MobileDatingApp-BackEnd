@@ -59,6 +59,13 @@ C:/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/obj/Debug
 C:/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/obj/Debug/net6.0/datingAppBackend.pdb
 C:/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/obj/Debug/net6.0/datingAppBackend.genruntimeconfig.cache
 C:/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/obj/Debug/net6.0/ref/datingAppBackend.dll
+/Users/ronel/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/obj/Debug/net6.0/datingAppBackend.csproj.AssemblyReference.cache
+/Users/ronel/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/obj/Debug/net6.0/datingAppBackend.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ronel/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/obj/Debug/net6.0/datingAppBackend.AssemblyInfoInputs.cache
+/Users/ronel/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/obj/Debug/net6.0/datingAppBackend.AssemblyInfo.cs
+/Users/ronel/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/obj/Debug/net6.0/datingAppBackend.csproj.CoreCompileInputs.cache
+/Users/ronel/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/obj/Debug/net6.0/datingAppBackend.MvcApplicationPartsAssemblyInfo.cs
+/Users/ronel/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/obj/Debug/net6.0/datingAppBackend.MvcApplicationPartsAssemblyInfo.cache
 /Users/ronel/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/bin/Debug/net6.0/appsettings.Development.json
 /Users/ronel/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/bin/Debug/net6.0/appsettings.json
 /Users/ronel/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/bin/Debug/net6.0/datingAppBackend
@@ -327,13 +334,6 @@ C:/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/obj/Debug
 /Users/ronel/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/bin/Debug/net6.0/runtimes/win/lib/netstandard2.0/System.Runtime.Caching.dll
 /Users/ronel/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/bin/Debug/net6.0/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll
 /Users/ronel/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/bin/Debug/net6.0/runtimes/win/lib/netcoreapp3.0/System.Windows.Extensions.dll
-/Users/ronel/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/obj/Debug/net6.0/datingAppBackend.csproj.AssemblyReference.cache
-/Users/ronel/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/obj/Debug/net6.0/datingAppBackend.GeneratedMSBuildEditorConfig.editorconfig
-/Users/ronel/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/obj/Debug/net6.0/datingAppBackend.AssemblyInfoInputs.cache
-/Users/ronel/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/obj/Debug/net6.0/datingAppBackend.AssemblyInfo.cs
-/Users/ronel/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/obj/Debug/net6.0/datingAppBackend.csproj.CoreCompileInputs.cache
-/Users/ronel/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/obj/Debug/net6.0/datingAppBackend.MvcApplicationPartsAssemblyInfo.cs
-/Users/ronel/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/obj/Debug/net6.0/datingAppBackend.MvcApplicationPartsAssemblyInfo.cache
 /Users/ronel/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/obj/Debug/net6.0/staticwebassets.build.json
 /Users/ronel/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/obj/Debug/net6.0/staticwebassets.development.json
 /Users/ronel/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/obj/Debug/net6.0/scopedcss/bundle/datingAppBackend.styles.css

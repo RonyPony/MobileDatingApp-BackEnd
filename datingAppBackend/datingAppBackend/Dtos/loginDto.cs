@@ -1,13 +1,11 @@
 ﻿using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using Microsoft.Build.Framework;
-using RequiredAttribute = System.ComponentModel.DataAnnotations.RequiredAttribute;
 
-namespace datingAppBackend.Models
+namespace datingAppBackend.Dtos
 {
-    public class Login
-    {
+	public class loginDto
+	{
         [Required]
         [DisplayName("User email")]
         public string UserEmail { get; set; }

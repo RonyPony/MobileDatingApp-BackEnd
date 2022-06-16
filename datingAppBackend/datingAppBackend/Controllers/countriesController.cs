@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using datingAppBackend.Models;
+using datingAppBackend.Dtos;
 
 namespace datingAppBackend.Controllers
 {
@@ -83,8 +84,15 @@ namespace datingAppBackend.Controllers
         // POST: api/countries
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<country>> Postcountry(country country)
+        public async Task<ActionResult<country>> Postcountry(registerCountryDto countryDto)
         {
+            country country = new country(){
+                code=countryDto.code,
+                createdOn = DateTime.Now,
+                enabled = countryDto.enabled,
+                name=countryDto.name,
+                updatedOn=DateTime.Now
+            };
           if (_context.Countries == null)
           {
               return Problem("Entity set 'datingContext.Countries'  is null.");

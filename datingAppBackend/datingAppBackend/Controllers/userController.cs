@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using datingAppBackend.Models;
+using datingAppBackend.Dtos;
 
 namespace datingAppBackend.Controllers
 {
@@ -83,22 +84,22 @@ namespace datingAppBackend.Controllers
         // POST: api/user
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<User>> PostUser(RegisterModel userRegister)
+        public async Task<ActionResult<User>> PostUser(registerUserDto userRegister)
         {
           if (_context.Users == null)
           {
               return Problem("Entity set 'datingContext.Users'  is null.");
           }
-            if (userRegister.Password!=userRegister.ConfirmPassword)
-            {
-                return Problem("Password does not match");
-            }
             User user = new User();
             user.name = userRegister.UserName;
             user.email = userRegister.Email;
             user.Password = userRegister.Password;
             user.lastName = userRegister.lastName;
             user.bio = "N/A";
+            user.sexualOrientationId = 0;
+            user.sexualPreferenceId = 0;
+            user.registerDate = DateTime.Now;
+            user.lastLogin = DateTime.Now;
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
 
@@ -136,8 +137,9 @@ namespace datingAppBackend.Controllers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         [Route("login")]
-        public async Task<ActionResult<User>> loginUser(Login userLogin)
+        public async Task<ActionResult<User>> loginUser(loginDto userLogin)
         {
+
             if (_context.Users == null)
             {
                 return Problem("Entity set 'datingContext.Users'  is null.");

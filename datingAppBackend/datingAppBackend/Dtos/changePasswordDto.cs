@@ -2,10 +2,13 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace datingAppBackend.Models
+namespace datingAppBackend.Dtos
 {
-    public class ChangePasswordModel
-    {
+	public class changePasswordDto
+	{
+        [Key]
+        public int userId { get; set; }
+
         [Required]
         [DataType(DataType.Password)]
         [DisplayName("Current password")]

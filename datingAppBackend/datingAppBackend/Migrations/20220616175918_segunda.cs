@@ -1,45 +1,53 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
 namespace datingAppBackend.Migrations
 {
-    public partial class _329487 : Migration
+    public partial class segunda : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AddColumn<int>(
-                name: "countryId",
+                name: "sexualOrientationId",
+                table: "Users",
+                type: "int",
+                nullable: false,
+                defaultValue: 0);
+
+            migrationBuilder.AddColumn<int>(
+                name: "sexualPreference",
                 table: "Users",
                 type: "int",
                 nullable: false,
                 defaultValue: 0);
 
             migrationBuilder.CreateTable(
-                name: "Countries",
+                name: "SexualOrientations",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    code = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    enabled = table.Column<bool>(type: "bit", nullable: false),
-                    updatedOn = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    enabled = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Countries", x => x.id);
+                    table.PrimaryKey("PK_SexualOrientations", x => x.id);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Countries");
+                name: "SexualOrientations");
 
             migrationBuilder.DropColumn(
-                name: "countryId",
+                name: "sexualOrientationId",
+                table: "Users");
+
+            migrationBuilder.DropColumn(
+                name: "sexualPreference",
                 table: "Users");
         }
     }
