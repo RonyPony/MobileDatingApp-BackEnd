@@ -25,21 +25,25 @@ namespace datingAppBackend.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<country>>> GetCountries()
         {
-          if (_context.Countries == null)
-          {
-              return NotFound();
-          }
-            return await _context.Countries.ToListAsync();
+            if (_context.Countries == null)
+            {
+                return NotFound();
+            }
+            var countries = await _context.Countries
+              .Where(e => e.enabled)
+            .ToListAsync();
+            return countries;
+            //return await _context.Countries.ToListAsync();
         }
 
         // GET: api/countries/5
         [HttpGet("{id}")]
         public async Task<ActionResult<country>> Getcountry(int id)
         {
-          if (_context.Countries == null)
-          {
-              return NotFound();
-          }
+            if (_context.Countries == null)
+            {
+                return NotFound();
+            }
             var country = await _context.Countries.FindAsync(id);
 
             if (country == null)
@@ -86,17 +90,18 @@ namespace datingAppBackend.Controllers
         [HttpPost]
         public async Task<ActionResult<country>> Postcountry(registerCountryDto countryDto)
         {
-            country country = new country(){
-                code=countryDto.code,
+            country country = new country()
+            {
+                code = countryDto.code,
                 createdOn = DateTime.Now,
                 enabled = countryDto.enabled,
-                name=countryDto.name,
-                updatedOn=DateTime.Now
+                name = countryDto.name,
+                updatedOn = DateTime.Now
             };
-          if (_context.Countries == null)
-          {
-              return Problem("Entity set 'datingContext.Countries'  is null.");
-          }
+            if (_context.Countries == null)
+            {
+                return Problem("Entity set 'datingContext.Countries'  is null.");
+            }
             country.createdOn = DateTime.Now;
             country.updatedOn = DateTime.Now;
             _context.Countries.Add(country);
