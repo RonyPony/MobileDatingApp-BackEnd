@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using datingAppBackend.Models;
 using datingAppBackend.Dtos;
+using datingAppBackend.Enums;
 
 namespace datingAppBackend.Controllers
 {
@@ -100,6 +101,15 @@ namespace datingAppBackend.Controllers
             user.sexualPreferenceId = 0;
             user.registerDate = DateTime.Now;
             user.lastLogin = DateTime.Now;
+            user.deletedAccount = false;
+            user.instagramUser = "N/A";
+            user.instagramUserEnabled = false;
+            user.loginStatus = LoginStatus.New;
+            user.maximunAgeToMatch = 80;
+            user.minimunAgeToMatch = 18;
+            user.modoFantasma = false;
+            user.whatsappNumberEnabled = false;
+            user.whatsappNumber = "N/A";
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
 

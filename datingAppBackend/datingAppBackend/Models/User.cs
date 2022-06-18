@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using datingAppBackend.Enums;
 
 namespace datingAppBackend.Models
 {
@@ -11,6 +12,24 @@ namespace datingAppBackend.Models
 
         [Required]
         public int countryId { get; set; }
+
+        public bool modoFantasma { get; set; }
+
+        public bool instagramUserEnabled { get; set; }
+
+        public string instagramUser { get; set; }
+
+        public bool whatsappNumberEnabled { get; set; }
+
+        public string whatsappNumber { get; set; }
+
+        public int minimunAgeToMatch { get; set; }
+
+        public int maximunAgeToMatch { get; set; }
+
+        public bool deletedAccount { get; set; }
+
+        public LoginStatus loginStatus { get; set; }
 
         [Required]
         [DataType(DataType.Text)]
