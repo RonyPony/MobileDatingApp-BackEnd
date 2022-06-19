@@ -13,6 +13,8 @@ namespace datingAppBackend.Models
         [Required]
         public int countryId { get; set; }
 
+        public int preferedCountryId { get; set; }
+
         public bool modoFantasma { get; set; }
 
         public bool instagramUserEnabled { get; set; }
