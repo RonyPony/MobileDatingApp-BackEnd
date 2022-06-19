@@ -1,15 +1,10 @@
 ﻿<Properties StartupConfiguration="{BDB16777-696C-4482-A9EC-A06946BC5B3C}|Default">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/ronel/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/Controllers/matchesController.cs" relfile="datingAppBackend/Controllers/matchesController.cs" line="40" column="1" />
-      <Breakpoint file="/Users/ronel/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/Controllers/matchesController.cs" relfile="datingAppBackend/Controllers/matchesController.cs" line="63" column="1" />
-      <Breakpoint file="/Users/ronel/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/Controllers/matchesController.cs" relfile="datingAppBackend/Controllers/matchesController.cs" line="73" column="1" />
-      <Breakpoint file="/Users/ronel/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/Controllers/userController.cs" relfile="datingAppBackend/Controllers/userController.cs" line="59" column="1" />
-    </BreakpointStore>
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.ItemProperties.datingAppBackend PreferredExecutionTarget="/Applications/Safari.app" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="datingAppBackend/Controllers/countriesController.cs">
+    <Files>
+      <File FileName="datingAppBackend/Models/User.cs" Line="16" Column="37" />
+      <File FileName="datingAppBackend/Controllers/countriesController.cs" Line="52" Column="30" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
@@ -28,5 +23,14 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/ronel/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/Controllers/matchesController.cs" relfile="datingAppBackend/Controllers/matchesController.cs" line="40" column="1" />
+      <Breakpoint file="/Users/ronel/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/Controllers/matchesController.cs" relfile="datingAppBackend/Controllers/matchesController.cs" line="63" column="1" />
+      <Breakpoint file="/Users/ronel/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/Controllers/matchesController.cs" relfile="datingAppBackend/Controllers/matchesController.cs" line="73" column="1" />
+      <Breakpoint file="/Users/ronel/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/Controllers/userController.cs" relfile="datingAppBackend/Controllers/userController.cs" line="59" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>

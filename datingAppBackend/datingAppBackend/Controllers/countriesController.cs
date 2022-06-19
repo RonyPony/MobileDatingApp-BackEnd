@@ -36,6 +36,24 @@ namespace datingAppBackend.Controllers
             //return await _context.Countries.ToListAsync();
         }
 
+        //GET:api/countries/byName/china
+        [HttpGet]
+        [Route("byName/{countryName}")]
+        public async Task<ActionResult<IEnumerable<country>>> GetCountriesByName(String countryName)
+        {
+            if (_context.Countries == null)
+            {
+                return NotFound();
+            }
+            var countries = await _context.Countries
+              .Where(e => e.enabled)
+              .Where(e=>e.name == countryName)
+            .ToListAsync();
+            return countries;
+            //return await _context.Countries.ToListAsync();
+        }
+
+
         // GET: api/countries/5
         [HttpGet("{id}")]
         public async Task<ActionResult<country>> Getcountry(int id)
