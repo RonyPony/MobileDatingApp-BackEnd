@@ -34,7 +34,7 @@ namespace datingAppBackend.Controllers
 
         // GET: api/matches/getPossibleMatch
         [HttpGet]
-        [Route("/getPossibleMatch/{userId}")]
+        [Route("getPossibleMatch/{userId}")]
         public async Task<ActionResult<IEnumerable<matches>>> GetPossibleMatch(int userId)
         {
             if (_context.Matches == null)
