@@ -46,16 +46,29 @@ namespace datingAppBackend.Controllers
                 return BadRequest();
             }
 
-            bool appropiateUserFound = false;
+            bool appropiateUserFound=false;
 
-            User originUser = await _context.Users.FindAsync(userId);
-            User destiUser = new User();
-            while (!appropiateUserFound)
+            try
             {
-                destiUser = getArandomUser(originUser);
-                appropiateUserFound = validateFoundUser(destiUser,originUser);
+                List<User> allUsers = await _context.Users.ToListAsync();
+                if (allUsers.Count() < 10)
+                {
+                    return StatusCode(StatusCodes.Status404NotFound,"Not enough registered users, add more than 10");
+                }
+                User originUser = await _context.Users.FindAsync(userId);
+                User destiUser = new User();
+                while (!appropiateUserFound)
+                {
+                    destiUser = getArandomUser(originUser);
+                    bool tmpVal = validateFoundUser(destiUser, originUser);
+                    appropiateUserFound = tmpVal;
+                }
+                return Ok(destiUser);
             }
-            return await _context.Matches.ToListAsync();
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError,ex);
+            }
         }
 
         private bool validateFoundUser(User destiUser,User originUser)
@@ -65,7 +78,7 @@ namespace datingAppBackend.Controllers
             {
                 return false;
             }
-            return false;
+            return true;
         }
 
         private User getArandomUser(User originUser)
