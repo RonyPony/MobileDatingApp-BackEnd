@@ -49,6 +49,23 @@ namespace datingAppBackend.Controllers
             return sexualOrientations;
         }
 
+        //GET:api/SexualOrientation/byName/heterosexual
+        [HttpGet]
+        [Route("byName/{sexualOrientationName}")]
+        public async Task<ActionResult<IEnumerable<sexualOrientations>>> GetSexualOrientationByName(String sexualOrientationName)
+        {
+            if (_context.Countries == null)
+            {
+                return NotFound();
+            }
+            var sexualOrientation = await _context.SexualOrientations
+              .Where(e => e.enabled)
+              .Where(e => e.name == sexualOrientationName)
+            .ToListAsync();
+            return sexualOrientation;
+        }
+
+
         // PUT: api/SexualOrientations/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]

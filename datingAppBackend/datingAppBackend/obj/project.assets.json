@@ -10057,19 +10057,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/ronel/.nuget/packages/": {}
+    "/Users/ronelcruz/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/ronel/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/datingAppBackend.csproj",
+      "projectUniqueName": "/Users/ronelcruz/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/datingAppBackend.csproj",
       "projectName": "datingAppBackend",
-      "projectPath": "/Users/ronel/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/datingAppBackend.csproj",
-      "packagesPath": "/Users/ronel/.nuget/packages/",
-      "outputPath": "/Users/ronel/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/obj/",
+      "projectPath": "/Users/ronelcruz/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/datingAppBackend.csproj",
+      "packagesPath": "/Users/ronelcruz/.nuget/packages/",
+      "outputPath": "/Users/ronelcruz/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/ronel/.nuget/NuGet/NuGet.Config"
+        "/Users/ronelcruz/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
