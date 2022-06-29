@@ -52,8 +52,8 @@ namespace datingAppBackend.Controllers
             {
                 List<User> allUsers = await _context.Users.ToListAsync();
                 List<matches> allMatchesFromThisUser = await _context.Matches.Where(r=>r.originUserId == userId).ToListAsync();
-                int usersCount = allUsers.Count();
-                int matchesFromThisUserCount = allMatchesFromThisUser.Count();
+                int usersCount = allUsers.Count;
+                int matchesFromThisUserCount = allMatchesFromThisUser.Count;
                 if (matchesFromThisUserCount == usersCount||matchesFromThisUserCount>(usersCount-2))
                 {
                     return BadRequest("Too many matches, error R389");
@@ -91,8 +91,7 @@ namespace datingAppBackend.Controllers
         private bool validateExistingMatch(User? originUser, User destiUser)
         {
             matches matchex = _context.Matches
-                .Where(r => r.originUserId == originUser.id)
-                .Where(r=>r.finalUserId==destiUser.id)
+                .Where(r => r.originUserId == originUser.id && r.finalUserId == destiUser.id)
                 .FirstOrDefault();
 
             return matchex != null;
@@ -114,9 +113,7 @@ namespace datingAppBackend.Controllers
             if (originUser.sexualPreferenceId!=0)
             {
                 usr = _context.Users.OrderBy(r => Guid.NewGuid())
-                    .Where(r => r.sexualPreferenceId == originUser.sexualPreferenceId)
-                    .Where(r => r.id != originUser.id)
-                    .Take(5).FirstOrDefault();
+                    .Where(r => r.sexualPreferenceId == originUser.sexualPreferenceId && r.id != originUser.id).FirstOrDefault();
                 return usr;
             }
             usr = _context.Users.OrderBy(r => Guid.NewGuid()).Where(r=>r.id!=originUser.id).Take(5).FirstOrDefault();
