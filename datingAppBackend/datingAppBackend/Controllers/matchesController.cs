@@ -57,11 +57,21 @@ namespace datingAppBackend.Controllers
                 }
                 User originUser = await _context.Users.FindAsync(userId);
                 User destiUser = new User();
+                
                 while (!appropiateUserFound)
                 {
                     destiUser = getArandomUser(originUser);
+                    bool hasmatch = validateExistingMatch(originUser, destiUser);
                     bool tmpVal = validateFoundUser(destiUser, originUser);
-                    appropiateUserFound = tmpVal;
+
+                    if (!hasmatch && tmpVal)
+                    {
+                        appropiateUserFound = true;
+                    }
+                    else
+                    {
+                        appropiateUserFound = false;
+                    }
                 }
                 return Ok(destiUser);
             }
@@ -69,6 +79,16 @@ namespace datingAppBackend.Controllers
             {
                 return StatusCode(StatusCodes.Status500InternalServerError,ex);
             }
+        }
+
+        private bool validateExistingMatch(User? originUser, User destiUser)
+        {
+            matches matchex = _context.Matches
+                .Where(r => r.originUserId == originUser.id)
+                .Where(r=>r.finalUserId==destiUser.id)
+                .FirstOrDefault();
+
+            return matchex != null;
         }
 
         private bool validateFoundUser(User destiUser,User originUser)
@@ -88,11 +108,11 @@ namespace datingAppBackend.Controllers
             {
                 usr = _context.Users.OrderBy(r => Guid.NewGuid())
                     .Where(r => r.sexualPreferenceId == originUser.sexualPreferenceId)
-                    .Where(r => r.id!=originUser.id)
+                    .Where(r => r.id != originUser.id)
                     .Take(5).FirstOrDefault();
                 return usr;
             }
-            usr = _context.Users.OrderBy(r => Guid.NewGuid()).Take(5).FirstOrDefault();
+            usr = _context.Users.OrderBy(r => Guid.NewGuid()).Where(r=>r.id!=originUser.id).Take(5).FirstOrDefault();
             return usr;
 
         }
@@ -151,15 +171,33 @@ namespace datingAppBackend.Controllers
         [HttpPost]
         public async Task<ActionResult<matches>> Postmatches(matchDto matchesDto)
         {
-            matches matches = new matches() { finalUserId = matchesDto.finalUserId, isAcepted = matchesDto.isAcepted, originUserId=matchesDto.originUserId};
-          if (_context.Matches == null)
-          {
-              return Problem("Entity set 'datingContext.Matches'  is null.");
-          }
-            _context.Matches.Add(matches);
-            await _context.SaveChangesAsync();
+            User originUser = await _context.Users.FindAsync(matchesDto.originUserId);
+            User destinUser = await _context.Users.FindAsync(matchesDto.finalUserId);
+            bool hasMatch = validateExistingMatch(originUser,destinUser);
+            if (hasMatch)
+            {
+                matches match =_context.Matches
+                    .Where(r => r.originUserId == originUser.id)
+                    .Where(r => r.finalUserId == destinUser.id)
+                    .FirstOrDefault();
+                match.isAcepted = true;
+                _context.Matches.Update(match);
+                _context.SaveChangesAsync();
+                return Ok("These users matched");
+            }
+            else
+            {
+                matches matches = new matches() { finalUserId = matchesDto.finalUserId, isAcepted = matchesDto.isAcepted, originUserId = matchesDto.originUserId };
+                if (_context.Matches == null)
+                {
+                    return Problem("Entity set 'datingContext.Matches'  is null.");
+                }
+                _context.Matches.Add(matches);
+                await _context.SaveChangesAsync();
 
-            return CreatedAtAction("Getmatches", new { id = matches.id }, matches);
+                return CreatedAtAction("Getmatches", new { id = matches.id }, matches);
+            }
+            
         }
 
         // DELETE: api/matches/5
