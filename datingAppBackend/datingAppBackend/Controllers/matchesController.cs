@@ -51,7 +51,14 @@ namespace datingAppBackend.Controllers
             try
             {
                 List<User> allUsers = await _context.Users.ToListAsync();
-                if (allUsers.Count() < 10)
+                List<matches> allMatchesFromThisUser = await _context.Matches.Where(r=>r.originUserId == userId).ToListAsync();
+                int usersCount = allUsers.Count();
+                int matchesFromThisUserCount = allMatchesFromThisUser.Count();
+                if (matchesFromThisUserCount == usersCount||matchesFromThisUserCount>(usersCount-2))
+                {
+                    return BadRequest("Too many matches, error R389");
+                }
+                if (usersCount < 10)
                 {
                     return StatusCode(StatusCodes.Status404NotFound,"Not enough registered users, add more than 10");
                 }
