@@ -1,22 +1,25 @@
 ﻿<Properties StartupConfiguration="{BDB16777-696C-4482-A9EC-A06946BC5B3C}|Default">
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workbench ActiveDocument="datingAppBackend/Controllers/matchesController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="datingAppBackend/Controllers/photosController.cs">
     <Files>
       <File FileName="datingAppBackend/Models/User.cs" Line="8" Column="18" />
       <File FileName="datingAppBackend/Controllers/countriesController.cs" Line="55" Column="1" />
-      <File FileName="datingAppBackend/Controllers/matchesController.cs" Line="55" Column="49" />
+      <File FileName="datingAppBackend/Controllers/matchesController.cs" Line="59" Column="144" />
       <File FileName="datingAppBackend/Controllers/userController.cs" Line="113" Column="28" />
       <File FileName="datingAppBackend/Controllers/SexualOrientationsController.cs" Line="61" Column="69" />
-      <File FileName="datingAppBackend/Models/datingContext.cs" Line="11" Column="19" />
+      <File FileName="datingAppBackend/Models/datingContext.cs" Line="5" Column="15" />
       <File FileName="datingAppBackend/appsettings.json" Line="3" Column="88" />
+      <File FileName="datingAppBackend/Controllers/photosController.cs" Line="122" Column="40" />
+      <File FileName="datingAppBackend/Models/PhotoToRegister.cs" Line="4" Column="25" />
+      <File FileName="datingAppBackend/Program.cs" Line="26" Column="2" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="datingAppBackend" expanded="True">
             <Node name="datingAppBackend" expanded="True">
-              <Node name="Controllers" expanded="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="photosController.cs" selected="True" />
+              </Node>
               <Node name="Enums" expanded="True" />
               <Node name="Models" expanded="True" />
             </Node>
@@ -28,13 +31,17 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.datingAppBackend PreferredExecutionTarget="/Applications/Safari.app" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/ronelcruz/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/Controllers/userController.cs" relfile="datingAppBackend/Controllers/userController.cs" line="59" column="1" />
       <Breakpoint file="/Users/ronelcruz/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/Controllers/matchesController.cs" relfile="datingAppBackend/Controllers/matchesController.cs" line="178" column="1" />
       <Breakpoint file="/Users/ronelcruz/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/Controllers/matchesController.cs" relfile="datingAppBackend/Controllers/matchesController.cs" line="40" column="1" />
+      <Breakpoint file="/Users/ronelcruz/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/Controllers/photosController.cs" relfile="datingAppBackend/Controllers/photosController.cs" line="79" column="1" />
+      <Breakpoint file="/Users/ronelcruz/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/Services/PhotoService.cs" relfile="datingAppBackend/Services/PhotoService.cs" line="19" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.datingAppBackend PreferredExecutionTarget="/Applications/Safari.app" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>
