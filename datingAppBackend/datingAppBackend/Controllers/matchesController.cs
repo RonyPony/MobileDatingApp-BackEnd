@@ -56,7 +56,7 @@ namespace datingAppBackend.Controllers
                 int matchesFromThisUserCount = allMatchesFromThisUser.Count;
                 if (matchesFromThisUserCount == usersCount||matchesFromThisUserCount>(usersCount-2))
                 {
-                    return BadRequest("Too many matches, error R389");
+                    return BadRequest("Ups, al parecer ya has agotado todas las opciones actuales, en unas pocas horas te analizaremos mas 🔥🤖.");
                 }
                 if (usersCount < 10)
                 {
