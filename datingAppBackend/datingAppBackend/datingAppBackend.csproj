@@ -25,6 +25,7 @@
     <None Remove="Microsoft.VisualStudio.Web.CodeGeneration.Design" />
     <None Remove="Microsoft.EntityFrameworkCore.Sqlite" />
     <None Remove="Enums\" />
+    <None Remove="Magick.NET.Core" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />

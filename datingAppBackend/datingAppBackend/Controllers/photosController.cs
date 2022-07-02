@@ -71,6 +71,25 @@ namespace datingAppBackend.Controllers
             }
         }
 
+        [HttpGet("profilePicture/{userId}")]
+        public async Task<IActionResult> GetProfilePhoto(int userId)
+        {
+            if (userId==null)
+            {
+                return BadRequest("Invalid userId");
+            }
+            try
+            {
+                //IEnumerable<Photo> photos = await _photoService.GetPhotosByUserId(userId);
+                Photo? photo = await _context.Photos.OrderByDescending(r => r.CreatedAt).Where(r => r.UserId == userId).FirstOrDefaultAsync();
+                return Ok(photo);
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500);
+            }
+        }
+
         [HttpPost("new")]
         public async Task<IActionResult> PostPhoto([FromForm] PhotoToRegister photoToRegister)
         {
@@ -97,6 +116,8 @@ namespace datingAppBackend.Controllers
 
                 using (var target = new MemoryStream())
                 {
+                    
+
                     photoToRegister.Image.CopyTo(target);
                     newPhoto.Image = target.ToArray();
                 }
