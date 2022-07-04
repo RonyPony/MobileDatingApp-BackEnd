@@ -25,6 +25,10 @@ namespace datingAppBackend.Models
 
         public string whatsappNumber { get; set; }
 
+        public DateTime bornDate { get; set; }
+
+        public bool showMySexuality { get; set; }
+
         public int minimunAgeToMatch { get; set; }
 
         public int maximunAgeToMatch { get; set; }
