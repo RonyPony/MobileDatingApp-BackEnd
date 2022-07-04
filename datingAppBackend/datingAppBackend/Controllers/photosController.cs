@@ -97,7 +97,7 @@ namespace datingAppBackend.Controllers
             {
                 string[] extensions = new string[] { ".jpg", ".png", ".svg", "jpeg" };
                 var fileName = Path.GetFileName(photoToRegister.Image.FileName);
-                var fileExtension = Path.GetExtension(fileName);
+                var fileExtension = Path.GetExtension(fileName).ToLower();
 
                 if (!extensions.Contains(fileExtension))
                     throw new ArgumentException("{0} is an InvalidFileExtention", fileExtension);

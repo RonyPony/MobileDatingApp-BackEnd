@@ -8,6 +8,7 @@ namespace datingAppBackend.Models
 		[Key]
 		public int id { get; set; }
 		public String name { get; set; }
+		public int imageId { get; set; }
 		public bool enabled { get; set; }
 	}
 }
