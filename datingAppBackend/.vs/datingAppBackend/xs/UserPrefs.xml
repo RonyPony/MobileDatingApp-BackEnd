@@ -1,6 +1,4 @@
 ﻿<Properties StartupConfiguration="{BDB16777-696C-4482-A9EC-A06946BC5B3C}|Default">
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.datingAppBackend PreferredExecutionTarget="/Applications/Safari.app" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/ronelcruz/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/Controllers/userController.cs" relfile="datingAppBackend/Controllers/userController.cs" line="59" column="1" />
@@ -11,14 +9,17 @@
       <Breakpoint file="/Users/ronelcruz/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/Controllers/photosController.cs" relfile="datingAppBackend/Controllers/photosController.cs" line="77" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="datingAppBackend/Controllers/photosController.cs">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.datingAppBackend PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="datingAppBackend/Controllers/userController.cs">
     <Files>
       <File FileName="datingAppBackend/Controllers/photosController.cs" Line="121" Column="58" IsPinned="True" />
       <File FileName="datingAppBackend/Controllers/SexualOrientationsController.cs" Line="108" Column="12" IsPinned="True" />
-      <File FileName="datingAppBackend/Models/User.cs" Line="8" Column="18" />
+      <File FileName="datingAppBackend/Models/User.cs" Line="29" Column="1" />
       <File FileName="datingAppBackend/Controllers/countriesController.cs" Line="55" Column="1" />
       <File FileName="datingAppBackend/Controllers/matchesController.cs" Line="59" Column="144" />
-      <File FileName="datingAppBackend/Controllers/userController.cs" Line="113" Column="28" />
+      <File FileName="datingAppBackend/Controllers/userController.cs" Line="55" Column="51" />
       <File FileName="datingAppBackend/Models/datingContext.cs" Line="5" Column="15" />
       <File FileName="datingAppBackend/appsettings.json" Line="3" Column="88" />
       <File FileName="datingAppBackend/Models/PhotoToRegister.cs" Line="4" Column="25" />
@@ -26,13 +27,16 @@
       <File FileName="datingAppBackend/Models/sexualOrientations.cs" Line="16" Column="1" />
       <File FileName="datingAppBackend/Models/Photo.cs" Line="1" Column="1" />
       <File FileName="datingAppBackend/Migrations/20220704020025_photoIdinsexualOrientations.cs" Line="1" Column="1" />
+      <File FileName="datingAppBackend/Migrations/20220704223648_addingborndateshowmysexuality.cs" Line="15" Column="17" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="datingAppBackend" expanded="True">
             <Node name="datingAppBackend" expanded="True">
-              <Node name="Controllers" expanded="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="userController.cs" selected="True" />
+              </Node>
               <Node name="Enums" expanded="True" />
               <Node name="Migrations" expanded="True" />
               <Node name="Models" expanded="True" />
@@ -45,6 +49,5 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>
