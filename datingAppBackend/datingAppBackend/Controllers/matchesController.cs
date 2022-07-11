@@ -147,11 +147,14 @@ namespace datingAppBackend.Controllers
             {
                 return NotFound();
             }
-            var matches = await _context.Matches.Where(e=>e.finalUserId == userId).ToListAsync();
+            var matches = await _context.Matches
+                .Where(e=>e.finalUserId == userId)
+                .Where(w=>w.isAcepted == true)
+                .ToListAsync();
 
             if (matches == null)
             {
-                return NotFound();
+                return NoContent();
             }
 
             return matches;
@@ -195,12 +198,13 @@ namespace datingAppBackend.Controllers
         {
             User originUser = await _context.Users.FindAsync(matchesDto.originUserId);
             User destinUser = await _context.Users.FindAsync(matchesDto.finalUserId);
-            bool hasMatch = validateExistingMatch(originUser,destinUser);
-            if (hasMatch)
+            //bool hasMatch = validateExistingMatch(originUser,destinUser);
+            bool hasMatchBackwards = validateExistingMatch(destinUser, originUser);
+            if (hasMatchBackwards)
             {
                 matches match =_context.Matches
-                    .Where(r => r.originUserId == originUser.id)
-                    .Where(r => r.finalUserId == destinUser.id)
+                    .Where(r => r.originUserId == destinUser.id)
+                    .Where(r => r.finalUserId == originUser.id)
                     .FirstOrDefault();
                 match.isAcepted = true;
                 _context.Matches.Update(match);
