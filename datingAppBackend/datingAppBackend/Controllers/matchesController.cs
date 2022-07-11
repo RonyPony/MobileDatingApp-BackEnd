@@ -139,6 +139,24 @@ namespace datingAppBackend.Controllers
             return matches;
         }
 
+        // GET: api/matches/userMatches/5
+        [HttpGet("userMatches/{userId}")]
+        public async Task<ActionResult<List<matches>>> getUsersMatches(int userId)
+        {
+            if (_context.Matches == null)
+            {
+                return NotFound();
+            }
+            var matches = await _context.Matches.Where(e=>e.finalUserId == userId).ToListAsync();
+
+            if (matches == null)
+            {
+                return NotFound();
+            }
+
+            return matches;
+        }
+
         // PUT: api/matches/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]

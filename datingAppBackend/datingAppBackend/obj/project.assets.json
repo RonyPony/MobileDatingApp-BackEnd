@@ -10062,11 +10062,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/ronelcruz/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/datingAppBackend.csproj",
+      "projectUniqueName": "/Users/ronelcruz/Projects/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/datingAppBackend.csproj",
       "projectName": "datingAppBackend",
-      "projectPath": "/Users/ronelcruz/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/datingAppBackend.csproj",
+      "projectPath": "/Users/ronelcruz/Projects/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/datingAppBackend.csproj",
       "packagesPath": "/Users/ronelcruz/.nuget/packages/",
-      "outputPath": "/Users/ronelcruz/Documents/proyectos/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/obj/",
+      "outputPath": "/Users/ronelcruz/Projects/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/ronelcruz/.nuget/NuGet/NuGet.Config"
