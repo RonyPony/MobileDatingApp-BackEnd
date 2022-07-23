@@ -113,10 +113,10 @@ namespace datingAppBackend.Controllers
             if (originUser.sexualPreferenceId!=0)
             {
                 usr = _context.Users.OrderBy(r => Guid.NewGuid())
-                    .Where(r => r.sexualPreferenceId == originUser.sexualPreferenceId && r.id != originUser.id).FirstOrDefault();
+                    .Where(r => r.sexualPreferenceId == originUser.sexualPreferenceId && r.id != originUser.id && r.isEnabled).FirstOrDefault();
                 return usr;
             }
-            usr = _context.Users.OrderBy(r => Guid.NewGuid()).Where(r=>r.id!=originUser.id).Take(5).FirstOrDefault();
+            usr = _context.Users.OrderBy(r => Guid.NewGuid()).Where(r=>r.id!=originUser.id && r.isEnabled).Take(5).FirstOrDefault();
             return usr;
 
         }
