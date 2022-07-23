@@ -139,6 +139,8 @@ namespace datingAppBackend.Controllers
             return matches;
         }
 
+
+
         // GET: api/matches/userMatches/5
         [HttpGet("userMatches/{userId}")]
         public async Task<ActionResult<List<matches>>> getUsersMatches(int userId)
@@ -147,17 +149,22 @@ namespace datingAppBackend.Controllers
             {
                 return NotFound();
             }
-            var matches = await _context.Matches
-                .Where(e=>e.finalUserId == userId)
-                .Where(w=>w.isAcepted == true)
+            List<matches> matches = await _context.Matches
+                .Where(e=>e.finalUserId == userId && e.isAcepted)             
                 .ToListAsync();
+            List<matches> matchesBackwards = await _context.Matches
+                .Where(e => e.originUserId == userId && e.isAcepted)
+                .ToListAsync();
+            //var backwardsMatches = await _context.Matches
+            //    .Where(e => e.originUserId == userId && e.isAcepted)
+            //    .ToListAsync();
 
             if (matches == null)
             {
                 return NoContent();
             }
 
-            return matches;
+            return matches.Union(matchesBackwards).OrderBy(x => x.id).ToList();
         }
 
         // PUT: api/matches/5
