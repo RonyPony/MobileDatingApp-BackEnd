@@ -30,7 +30,7 @@ namespace datingAppBackend.Controllers
           {
               return NotFound();
           }
-            return await _context.Users.ToListAsync();
+            return await _context.Users.Where(e=>e.isEnabled==true).ToListAsync();
         }
 
         // GET: api/user/5
@@ -96,6 +96,7 @@ namespace datingAppBackend.Controllers
             user.email = userRegister.Email;
             user.Password = userRegister.Password;
             user.lastName = userRegister.lastName;
+            user.isEnabled = true;
             user.bio = "N/A";
             user.sexualOrientationId = 0;
             user.sexualPreferenceId = 0;
@@ -157,6 +158,7 @@ namespace datingAppBackend.Controllers
             var users = (from x in _context.Users
                          where x.email == userLogin.UserEmail
                          where x.Password == userLogin.Password
+                         where x.isEnabled
                          select x).FirstOrDefault();
 
             int userId = 0;
@@ -178,6 +180,72 @@ namespace datingAppBackend.Controllers
             await _context.SaveChangesAsync();
 
             return Ok(user);
+        }
+
+
+
+        // POST: api/enableUser/1
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [HttpPost]
+        [Route("enableUser/{id}")]
+        public async Task<ActionResult<User>> enableUser(int id)
+        {
+
+            if (_context.Users == null)
+            {
+                return Problem("Entity set 'datingContext.Users'  is null.");
+            }
+            
+
+            if (id!= null)
+            {
+                User user = await _context.Users.FindAsync(id);
+
+                user.isEnabled = true;
+
+                _context.Users.Update(user);
+                await _context.SaveChangesAsync();
+
+                return Ok(user);
+            }
+            else
+            {
+                return BadRequest("Provide ID");
+            }
+
+            
+        }
+
+        // POST: api/desableUser/1
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [HttpPost]
+        [Route("disableUser/{id}")]
+        public async Task<ActionResult<User>> disableUser(int id)
+        {
+
+            if (_context.Users == null)
+            {
+                return Problem("Entity set 'datingContext.Users'  is null.");
+            }
+
+
+            if (id != null)
+            {
+                User user = await _context.Users.FindAsync(id);
+
+                user.isEnabled = false;
+
+                _context.Users.Update(user);
+                await _context.SaveChangesAsync();
+
+                return Ok(user);
+            }
+            else
+            {
+                return BadRequest("Provide ID");
+            }
+
+
         }
 
         // DELETE: api/user/5
