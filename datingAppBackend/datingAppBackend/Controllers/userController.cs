@@ -158,10 +158,15 @@ namespace datingAppBackend.Controllers
             var users = (from x in _context.Users
                          where x.email == userLogin.UserEmail
                          where x.Password == userLogin.Password
-                         where x.isEnabled
+                         
                          select x).FirstOrDefault();
 
             int userId = 0;
+
+            if (!users.isEnabled)
+            {
+                return StatusCode(StatusCodes.Status423Locked,"Current User is locked by the admin");
+            }
 
             if (users != null)
             {
