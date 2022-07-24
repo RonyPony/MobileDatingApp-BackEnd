@@ -165,7 +165,7 @@ namespace datingAppBackend.Controllers
 
             if (!users.isEnabled)
             {
-                return StatusCode(StatusCodes.Status423Locked,"Current User is locked by the admin");
+                return StatusCode(StatusCodes.Status423Locked,"Current User ("+users.email+") is locked by the admin, we will review your account just to make sure, keep an eye on your email inbox, or contact us");
             }
 
             if (users != null)
