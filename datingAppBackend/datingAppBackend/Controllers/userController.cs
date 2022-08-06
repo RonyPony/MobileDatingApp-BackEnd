@@ -91,30 +91,42 @@ namespace datingAppBackend.Controllers
           {
               return Problem("Entity set 'datingContext.Users'  is null.");
           }
-            User user = new User();
-            user.name = userRegister.UserName;
-            user.email = userRegister.Email;
-            user.Password = userRegister.Password;
-            user.lastName = userRegister.lastName;
-            user.isEnabled = true;
-            user.bio = "N/A";
-            user.sexualOrientationId = 0;
-            user.sexualPreferenceId = 0;
-            user.registerDate = DateTime.Now;
-            user.lastLogin = DateTime.Now;
-            user.deletedAccount = false;
-            user.instagramUser = "N/A";
-            user.instagramUserEnabled = false;
-            user.loginStatus = LoginStatus.New;
-            user.maximunAgeToMatch = 80;
-            user.minimunAgeToMatch = 18;
-            user.modoFantasma = false;
-            user.whatsappNumberEnabled = false;
-            user.whatsappNumber = "N/A";
-            _context.Users.Add(user);
-            await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetUser", new { id = user.id }, user);
+            var usersFound = await _context.Users
+                .Where(x=>x.email==userRegister!.Email)
+                .ToListAsync();
+            bool emailExists = usersFound.Count<=0;
+            if (emailExists)
+            {
+                User user = new User();
+                user.name = userRegister.UserName;
+                user.email = userRegister.Email;
+                user.Password = userRegister.Password;
+                user.lastName = userRegister.lastName;
+                user.isEnabled = true;
+                user.bio = "N/A";
+                user.sexualOrientationId = 0;
+                user.sexualPreferenceId = 0;
+                user.registerDate = DateTime.Now;
+                user.lastLogin = DateTime.Now;
+                user.deletedAccount = false;
+                user.instagramUser = "N/A";
+                user.instagramUserEnabled = false;
+                user.loginStatus = LoginStatus.New;
+                user.maximunAgeToMatch = 80;
+                user.minimunAgeToMatch = 18;
+                user.modoFantasma = false;
+                user.whatsappNumberEnabled = false;
+                user.whatsappNumber = "N/A";
+                _context.Users.Add(user);
+                await _context.SaveChangesAsync();
+
+                return CreatedAtAction("GetUser", new { id = user.id }, user);
+            }
+            else
+            {
+                return BadRequest("This email is already registered, try to login");
+            }
         }
 
         [HttpPost]

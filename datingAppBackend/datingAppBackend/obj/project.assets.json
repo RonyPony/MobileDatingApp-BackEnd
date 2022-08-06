@@ -10057,19 +10057,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/ronelcruz/.nuget/packages/": {}
+    "/Users/rony/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/ronelcruz/Projects/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/datingAppBackend.csproj",
+      "projectUniqueName": "/Users/rony/projects/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/datingAppBackend.csproj",
       "projectName": "datingAppBackend",
-      "projectPath": "/Users/ronelcruz/Projects/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/datingAppBackend.csproj",
-      "packagesPath": "/Users/ronelcruz/.nuget/packages/",
-      "outputPath": "/Users/ronelcruz/Projects/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/obj/",
+      "projectPath": "/Users/rony/projects/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/datingAppBackend.csproj",
+      "packagesPath": "/Users/rony/.nuget/packages/",
+      "outputPath": "/Users/rony/projects/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/ronelcruz/.nuget/NuGet/NuGet.Config"
+        "/Users/rony/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -10134,7 +10134,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.301/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.302/RuntimeIdentifierGraph.json"
       }
     }
   }
