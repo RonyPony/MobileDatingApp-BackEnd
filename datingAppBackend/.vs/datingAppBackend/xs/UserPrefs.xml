@@ -1,20 +1,5 @@
 ﻿<Properties StartupConfiguration="{BDB16777-696C-4482-A9EC-A06946BC5B3C}|Default">
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/rony/projects/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/Controllers/userController.cs" relfile="datingAppBackend/Controllers/userController.cs" line="59" column="1" />
-      <Breakpoint file="/Users/rony/projects/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/Controllers/matchesController.cs" relfile="datingAppBackend/Controllers/matchesController.cs" line="206" column="1" />
-      <Breakpoint file="/Users/rony/projects/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/Controllers/photosController.cs" relfile="datingAppBackend/Controllers/photosController.cs" line="98" column="1" />
-      <Breakpoint file="/Users/rony/projects/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/Services/PhotoService.cs" relfile="datingAppBackend/Services/PhotoService.cs" line="19" column="1" />
-      <Breakpoint file="/Users/rony/projects/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/Controllers/photosController.cs" relfile="datingAppBackend/Controllers/photosController.cs" line="77" column="1" />
-      <Breakpoint file="/Users/rony/projects/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/Controllers/matchesController.cs" relfile="datingAppBackend/Controllers/matchesController.cs" line="148" column="1" />
-      <Breakpoint file="/Users/rony/projects/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/Controllers/matchesController.cs" relfile="datingAppBackend/Controllers/matchesController.cs" line="93" column="1" />
-      <Breakpoint file="/Users/rony/projects/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/Controllers/userController.cs" relfile="datingAppBackend/Controllers/userController.cs" line="98" column="1" />
-    </BreakpointStore>
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.datingAppBackend PreferredExecutionTarget="/Applications/Safari.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="datingAppBackend/Controllers/userController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="datingAppBackend/Program.cs">
     <Files>
       <File FileName="datingAppBackend/Controllers/photosController.cs" Line="121" Column="58" IsPinned="True" />
       <File FileName="datingAppBackend/Controllers/SexualOrientationsController.cs" Line="108" Column="12" IsPinned="True" />
@@ -22,15 +7,14 @@
       <File FileName="datingAppBackend/Controllers/countriesController.cs" Line="55" Column="1" />
       <File FileName="datingAppBackend/Controllers/matchesController.cs" Line="98" Column="10" />
       <File FileName="datingAppBackend/Controllers/userController.cs" Line="128" Column="1" />
-      <File FileName="datingAppBackend/Models/datingContext.cs" Line="5" Column="15" />
-      <File FileName="datingAppBackend/appsettings.json" Line="9" Column="6" />
+      <File FileName="datingAppBackend/Models/datingContext.cs" Line="12" Column="1" />
       <File FileName="datingAppBackend/Models/PhotoToRegister.cs" Line="4" Column="25" />
-      <File FileName="datingAppBackend/Program.cs" Line="26" Column="2" />
+      <File FileName="datingAppBackend/Program.cs" Line="51" Column="14" />
       <File FileName="datingAppBackend/Models/sexualOrientations.cs" Line="16" Column="1" />
       <File FileName="datingAppBackend/Models/Photo.cs" Line="1" Column="1" />
-      <File FileName="datingAppBackend/Migrations/20220704020025_photoIdinsexualOrientations.cs" Line="1" Column="1" />
-      <File FileName="datingAppBackend/Migrations/20220704223648_addingborndateshowmysexuality.cs" Line="15" Column="17" />
       <File FileName="datingAppBackend/Migrations/20220723010538_isenabled.cs" Line="10" Column="10" />
+      <File FileName="datingAppBackend/appsettings.json" Line="4" Column="52" />
+      <File FileName="datingAppBackend/datingAppBackend.csproj" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -48,5 +32,20 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/rony/projects/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/Controllers/userController.cs" relfile="datingAppBackend/Controllers/userController.cs" line="59" column="1" />
+      <Breakpoint file="/Users/rony/projects/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/Controllers/matchesController.cs" relfile="datingAppBackend/Controllers/matchesController.cs" line="206" column="1" />
+      <Breakpoint file="/Users/rony/projects/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/Controllers/photosController.cs" relfile="datingAppBackend/Controllers/photosController.cs" line="98" column="1" />
+      <Breakpoint file="/Users/rony/projects/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/Services/PhotoService.cs" relfile="datingAppBackend/Services/PhotoService.cs" line="19" column="1" />
+      <Breakpoint file="/Users/rony/projects/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/Controllers/photosController.cs" relfile="datingAppBackend/Controllers/photosController.cs" line="77" column="1" />
+      <Breakpoint file="/Users/rony/projects/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/Controllers/matchesController.cs" relfile="datingAppBackend/Controllers/matchesController.cs" line="148" column="1" />
+      <Breakpoint file="/Users/rony/projects/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/Controllers/matchesController.cs" relfile="datingAppBackend/Controllers/matchesController.cs" line="93" column="1" />
+      <Breakpoint file="/Users/rony/projects/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/Controllers/userController.cs" relfile="datingAppBackend/Controllers/userController.cs" line="98" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.datingAppBackend PreferredExecutionTarget="/Applications/Safari.app" />
 </Properties>
