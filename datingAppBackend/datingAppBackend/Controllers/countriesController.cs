@@ -81,7 +81,7 @@ namespace datingAppBackend.Controllers
             {
                 return BadRequest();
             }
-            country.updatedOn = DateTime.Now;
+            country.updatedOn = DateTime.UtcNow;
             _context.Entry(country).State = EntityState.Modified;
 
             try
@@ -111,17 +111,17 @@ namespace datingAppBackend.Controllers
             country country = new country()
             {
                 code = countryDto.code,
-                createdOn = DateTime.Now,
+                createdOn = DateTime.UtcNow,
                 enabled = countryDto.enabled,
                 name = countryDto.name,
-                updatedOn = DateTime.Now
+                updatedOn = DateTime.UtcNow
             };
             if (_context.Countries == null)
             {
                 return Problem("Entity set 'datingContext.Countries'  is null.");
             }
-            country.createdOn = DateTime.Now;
-            country.updatedOn = DateTime.Now;
+            country.createdOn = DateTime.UtcNow;
+            country.updatedOn = DateTime.UtcNow;
             _context.Countries.Add(country);
             await _context.SaveChangesAsync();
 

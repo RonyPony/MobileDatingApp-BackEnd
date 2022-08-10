@@ -107,8 +107,8 @@ namespace datingAppBackend.Controllers
                 user.bio = "N/A";
                 user.sexualOrientationId = 0;
                 user.sexualPreferenceId = 0;
-                user.registerDate = DateTime.Now;
-                user.lastLogin = DateTime.Now;
+                user.registerDate = DateTime.UtcNow;
+                user.lastLogin = DateTime.UtcNow;
                 user.deletedAccount = false;
                 user.instagramUser = "N/A";
                 user.instagramUserEnabled = false;
@@ -191,7 +191,7 @@ namespace datingAppBackend.Controllers
 
             User user = await _context.Users.FindAsync(userId);
 
-            user.lastLogin = DateTime.Now;
+            user.lastLogin = DateTime.UtcNow;
 
             _context.Users.Update(user);
             await _context.SaveChangesAsync();

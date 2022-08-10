@@ -111,7 +111,7 @@ namespace datingAppBackend.Controllers
                 {
                     Name = fileName.Split('.')[0],
                     UserId = photoToRegister.userId,
-                    CreatedAt = DateTime.Now
+                    CreatedAt = DateTime.UtcNow
                 };
 
                 using (var target = new MemoryStream())
