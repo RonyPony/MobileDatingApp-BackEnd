@@ -67,7 +67,7 @@ namespace datingAppBackend.Controllers
                 
                 while (!appropiateUserFound)
                 {
-                    destiUser = getArandomUser(originUser);
+                    destiUser = getArandomUser(originUser,usersCount);
                     bool hasmatch = validateExistingMatch(originUser, destiUser);
                     bool tmpVal = validateFoundUser(destiUser, originUser);
 
@@ -107,7 +107,7 @@ namespace datingAppBackend.Controllers
             return true;
         }
 
-        private User getArandomUser(User originUser)
+        private User getArandomUser(User originUser,int totalUsers)
         {
             User usr = new User();
             if (originUser.sexualPreferenceId!=0)
@@ -116,7 +116,10 @@ namespace datingAppBackend.Controllers
                     .Where(r => r.sexualPreferenceId == originUser.sexualPreferenceId && r.id != originUser.id && r.isEnabled).FirstOrDefault();
                 return usr;
             }
-            usr = _context.Users.Where(r=>r.id!=originUser.id && r.isEnabled).FirstOrDefault();
+            //int gui = Convert.ToInt32(Guid.NewGuid());
+            Random ran = new Random();
+            int x = ran.Next(0, totalUsers);
+            usr = _context.Users.Skip(x).Where(r=>r.id!=originUser.id && r.isEnabled).FirstOrDefault();
             return usr;
 
         }

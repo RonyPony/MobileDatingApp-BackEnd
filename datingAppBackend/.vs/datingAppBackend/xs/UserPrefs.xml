@@ -1,12 +1,12 @@
 ﻿<Properties StartupConfiguration="{BDB16777-696C-4482-A9EC-A06946BC5B3C}|Default">
-  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="datingAppBackend/Controllers/matchesController.cs">
     <Files>
       <File FileName="datingAppBackend/Controllers/photosController.cs" Line="121" Column="58" IsPinned="True" />
       <File FileName="datingAppBackend/Controllers/SexualOrientationsController.cs" Line="108" Column="12" IsPinned="True" />
       <File FileName="datingAppBackend/Models/User.cs" Line="16" Column="42" />
       <File FileName="datingAppBackend/Controllers/countriesController.cs" Line="55" Column="1" />
-      <File FileName="datingAppBackend/Controllers/matchesController.cs" Line="97" Column="36" />
+      <File FileName="datingAppBackend/Controllers/matchesController.cs" Line="150" Column="10" />
       <File FileName="datingAppBackend/Controllers/userController.cs" Line="132" Column="14" />
       <File FileName="datingAppBackend/Models/datingContext.cs" Line="12" Column="1" />
       <File FileName="datingAppBackend/Models/PhotoToRegister.cs" Line="4" Column="25" />
@@ -32,21 +32,17 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.datingAppBackend PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/rony/projects/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/Controllers/userController.cs" relfile="datingAppBackend/Controllers/userController.cs" line="59" column="1" />
-      <Breakpoint file="/Users/rony/projects/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/Controllers/matchesController.cs" relfile="datingAppBackend/Controllers/matchesController.cs" line="206" column="1" />
+      <Breakpoint file="/Users/rony/projects/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/Controllers/matchesController.cs" relfile="datingAppBackend/Controllers/matchesController.cs" line="209" column="1" />
       <Breakpoint file="/Users/rony/projects/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/Controllers/photosController.cs" relfile="datingAppBackend/Controllers/photosController.cs" line="98" column="1" />
       <Breakpoint file="/Users/rony/projects/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/Services/PhotoService.cs" relfile="datingAppBackend/Services/PhotoService.cs" line="19" column="1" />
       <Breakpoint file="/Users/rony/projects/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/Controllers/photosController.cs" relfile="datingAppBackend/Controllers/photosController.cs" line="77" column="1" />
-      <Breakpoint file="/Users/rony/projects/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/Controllers/matchesController.cs" relfile="datingAppBackend/Controllers/matchesController.cs" line="148" column="1" />
-      <Breakpoint file="/Users/rony/projects/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/Controllers/matchesController.cs" relfile="datingAppBackend/Controllers/matchesController.cs" line="93" column="1" />
       <Breakpoint file="/Users/rony/projects/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/Controllers/userController.cs" relfile="datingAppBackend/Controllers/userController.cs" line="98" column="1" />
-      <Breakpoint file="/Users/rony/projects/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/Controllers/matchesController.cs" relfile="datingAppBackend/Controllers/matchesController.cs" line="40" column="1" />
-      <Breakpoint file="/Users/rony/projects/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/Controllers/matchesController.cs" relfile="datingAppBackend/Controllers/matchesController.cs" line="70" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.datingAppBackend PreferredExecutionTarget="/Applications/Safari.app" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
