@@ -60,7 +60,7 @@ namespace datingAppBackend.Controllers
                 }
                 if (usersCount < 10)
                 {
-                    return StatusCode(StatusCodes.Status404NotFound,"Not enough registered users, add more than 10");
+                    return StatusCode(StatusCodes.Status404NotFound,"Not enough registered users");
                 }
                 User originUser = await _context.Users.FindAsync(userId);
                 User destiUser = new User();
@@ -116,7 +116,7 @@ namespace datingAppBackend.Controllers
                     .Where(r => r.sexualPreferenceId == originUser.sexualPreferenceId && r.id != originUser.id && r.isEnabled).FirstOrDefault();
                 return usr;
             }
-            usr = _context.Users.OrderBy(r => Guid.NewGuid()).Where(r=>r.id!=originUser.id && r.isEnabled).Take(5).FirstOrDefault();
+            usr = _context.Users.Where(r=>r.id!=originUser.id && r.isEnabled).FirstOrDefault();
             return usr;
 
         }
