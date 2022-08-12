@@ -206,34 +206,45 @@ namespace datingAppBackend.Controllers
         [HttpPost]
         public async Task<ActionResult<matches>> Postmatches(matchDto matchesDto)
         {
-            User originUser = await _context.Users.FindAsync(matchesDto.originUserId);
-            User destinUser = await _context.Users.FindAsync(matchesDto.finalUserId);
-            //bool hasMatch = validateExistingMatch(originUser,destinUser);
-            bool hasMatchBackwards = validateExistingMatch(destinUser, originUser);
-            if (hasMatchBackwards)
+            try
             {
-                matches match =_context.Matches
-                    .Where(r => r.originUserId == destinUser.id)
-                    .Where(r => r.finalUserId == originUser.id)
-                    .FirstOrDefault();
-                match.isAcepted = true;
-                _context.Matches.Update(match);
-                _context.SaveChangesAsync();
-                return Ok("These users matched");
-            }
-            else
-            {
-                matches matches = new matches() { finalUserId = matchesDto.finalUserId, isAcepted = matchesDto.isAcepted, originUserId = matchesDto.originUserId };
-                if (_context.Matches == null)
+                User originUser = await _context.Users.FindAsync(matchesDto.originUserId);
+                User destinUser = await _context.Users.FindAsync(matchesDto.finalUserId);
+                //bool hasMatch = validateExistingMatch(originUser,destinUser);
+                bool hasMatchBackwards = validateExistingMatch(destinUser, originUser);
+                if (hasMatchBackwards)
                 {
-                    return Problem("Entity set 'datingContext.Matches'  is null.");
+                    matches match = _context.Matches
+                        .Where(r => r.originUserId == destinUser.id)
+                        .Where(r => r.finalUserId == originUser.id)
+                        .FirstOrDefault();
+                    match.isAcepted = true;
+                    _context.Matches.Update(match);
+                    await _context.SaveChangesAsync();
+                    return Ok("These users matched");
                 }
-                _context.Matches.Add(matches);
-                await _context.SaveChangesAsync();
+                else
+                {
+                    List<matches> matchesList = await _context.Matches.Where(data => data.originUserId == originUser.id && data.finalUserId == destinUser!.id).ToListAsync();
+                    if (matchesList.Count >= 1)
+                    {
+                        return Ok("Match already created, not modifications where made");
+                    }
+                    matches matches = new matches() { finalUserId = matchesDto.finalUserId, isAcepted = matchesDto.isAcepted, originUserId = matchesDto.originUserId };
+                    if (_context.Matches == null)
+                    {
+                        return Problem("Entity set 'datingContext.Matches'  is null.");
+                    }
+                    _context.Matches.Add(matches);
+                    await _context.SaveChangesAsync();
 
-                return CreatedAtAction("Getmatches", new { id = matches.id }, matches);
+                    return CreatedAtAction("Getmatches", new { id = matches.id }, matches);
+                }
             }
-            
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex);
+            }
         }
 
         // DELETE: api/matches/5
