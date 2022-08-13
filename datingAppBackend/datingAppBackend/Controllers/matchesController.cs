@@ -250,7 +250,7 @@ namespace datingAppBackend.Controllers
 
         // POST: api/matches/seen/1
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [Route("/seen/{id}")]
+        [Route("/api/seen/{id}")]
         [HttpPost]
         public async Task<ActionResult<matches>> MarkAsSeen(int id)
         {
