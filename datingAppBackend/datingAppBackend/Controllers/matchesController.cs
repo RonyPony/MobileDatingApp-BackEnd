@@ -230,7 +230,7 @@ namespace datingAppBackend.Controllers
                     {
                         return Ok("Match already created, not modifications where made");
                     }
-                    matches matches = new matches() { finalUserId = matchesDto.finalUserId, isAcepted = matchesDto.isAcepted, originUserId = matchesDto.originUserId };
+                    matches matches = new matches() { finalUserId = matchesDto.finalUserId, isAcepted = matchesDto.isAcepted, originUserId = matchesDto.originUserId,isSeen=false };
                     if (_context.Matches == null)
                     {
                         return Problem("Entity set 'datingContext.Matches'  is null.");
@@ -239,6 +239,40 @@ namespace datingAppBackend.Controllers
                     await _context.SaveChangesAsync();
 
                     return CreatedAtAction("Getmatches", new { id = matches.id }, matches);
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex);
+            }
+        }
+
+
+        // POST: api/matches/seen/1
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [Route("/seen/{id}")]
+        [HttpPost]
+        public async Task<ActionResult<matches>> MarkAsSeen(int id)
+        {
+            if (id==null)
+            {
+                return BadRequest("");
+            }
+            try
+            {
+                matches match = await _context.Matches.FindAsync(id);
+                
+                if (match!=null)
+                {
+                    match.isSeen = true;
+                    _context.Matches.Update(match);
+                    await _context.SaveChangesAsync();
+                    return Ok("Marked as seen");
+                }
+                else
+                {
+
+                    return NotFound();
                 }
             }
             catch (Exception ex)

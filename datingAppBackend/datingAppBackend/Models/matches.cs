@@ -20,6 +20,10 @@ namespace datingAppBackend.Models
         [Required]
         [DisplayName("isAcepted")]
         public bool isAcepted { get; set; }
+
+        [Required]
+        [DisplayName("isSeen")]
+        public bool isSeen { get; set; }
     }
 }
 
