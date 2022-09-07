@@ -167,12 +167,14 @@ namespace datingAppBackend.Controllers
             {
                 return Problem("Entity set 'datingContext.Users'  is null.");
             }
+
+            Console.WriteLine("Performing login to user"+userLogin.UserEmail);
             var users = (from x in _context.Users
                          where x.email == userLogin.UserEmail
                          where x.Password == userLogin.Password
                          
                          select x).FirstOrDefault();
-
+            Console.WriteLine("Data found: " + users);
             int userId = 0;
 
             if (!users.isEnabled)
