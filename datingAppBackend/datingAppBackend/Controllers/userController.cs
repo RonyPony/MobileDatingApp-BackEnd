@@ -162,7 +162,7 @@ namespace datingAppBackend.Controllers
         [Route("login")]
         public async Task<ActionResult<User>> loginUser(loginDto userLogin)
         {
-
+            userLogin.UserEmail = userLogin.UserEmail.ToLower();
             if (_context.Users == null)
             {
                 return Problem("Entity set 'datingContext.Users'  is null.");
@@ -174,7 +174,6 @@ namespace datingAppBackend.Controllers
                          where x.Password == userLogin.Password
                          
                          select x).FirstOrDefault();
-            Console.WriteLine("Data found: " + users);
             int userId = 0;
 
             if (!users.isEnabled)
