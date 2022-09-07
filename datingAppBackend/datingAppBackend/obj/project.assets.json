@@ -9352,19 +9352,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/rony/.nuget/packages/": {}
+    "/Users/ron/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/rony/projects/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/datingAppBackend.csproj",
+      "projectUniqueName": "/Users/ron/projects/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/datingAppBackend.csproj",
       "projectName": "datingAppBackend",
-      "projectPath": "/Users/rony/projects/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/datingAppBackend.csproj",
-      "packagesPath": "/Users/rony/.nuget/packages/",
-      "outputPath": "/Users/rony/projects/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/obj/",
+      "projectPath": "/Users/ron/projects/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/datingAppBackend.csproj",
+      "packagesPath": "/Users/ron/.nuget/packages/",
+      "outputPath": "/Users/ron/projects/MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/rony/.nuget/NuGet/NuGet.Config"
+        "/Users/ron/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
