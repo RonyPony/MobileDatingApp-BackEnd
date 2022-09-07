@@ -41,11 +41,13 @@ namespace datingAppBackend.Models
 
         [Required]
         [DataType(DataType.Text)]
+        [MaxLength(15)]
         [DisplayName("User Name")]
         public string name { get; set; }
 
         [Required]
         [DataType(DataType.Text)]
+        [MaxLength(30)]
         [DisplayName("Last Name")]
         public string lastName { get; set; }
 
