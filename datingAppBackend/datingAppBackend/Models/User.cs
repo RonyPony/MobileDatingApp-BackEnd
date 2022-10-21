@@ -68,6 +68,9 @@ namespace datingAppBackend.Models
         [DisplayName("Sexual Orientation")]
         public int sexualOrientationId { get; set; }
 
+        [DisplayName("Sex")]
+        public String sex { get; set; }
+
         [DisplayName("Sexual Preference")]
         public int sexualPreferenceId { get; set; }
 
