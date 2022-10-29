@@ -20,6 +20,12 @@ namespace datingAppBackend.Dtos
         public string Email { get; set; }
 
         [Required]
+        [DataType(DataType.Text)]
+        [DisplayName("Sex")]
+        public string Sex { get; set; }
+
+
+        [Required]
         [DataType(DataType.Password)]
         [DisplayName("Password")]
         public string Password { get; set; }
