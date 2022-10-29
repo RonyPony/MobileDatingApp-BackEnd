@@ -109,6 +109,7 @@ namespace datingAppBackend.Controllers
                 user.sexualPreferenceId = 0;
                 user.registerDate = DateTime.UtcNow;
                 user.lastLogin = DateTime.UtcNow;
+                user.sex = userRegister.Sex;
                 user.deletedAccount = false;
                 user.instagramUser = "N/A";
                 user.instagramUserEnabled = false;
