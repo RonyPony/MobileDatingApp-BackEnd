@@ -119,7 +119,20 @@ namespace datingAppBackend.Controllers
             //int gui = Convert.ToInt32(Guid.NewGuid());
             Random ran = new Random();
             int x = ran.Next(0, totalUsers);
-            usr = _context.Users.Skip(x).Where(r=>r.id!=originUser.id && r.isEnabled).FirstOrDefault();
+            if (originUser.sex == "M")
+            {
+                usr = _context.Users.Skip(x).Where(r => r.id != originUser.id && r.isEnabled && r.sex=="F").FirstOrDefault();
+            }
+            else if (originUser.sex == "F")
+            {
+                usr = _context.Users.Skip(x).Where(r => r.id != originUser.id && r.isEnabled && r.sex == "M").FirstOrDefault();
+            }
+            else
+            {
+                usr = _context.Users.Skip(x).Where(r => r.id != originUser.id && r.isEnabled).FirstOrDefault();
+            }
+                
+            
             return usr;
 
         }
