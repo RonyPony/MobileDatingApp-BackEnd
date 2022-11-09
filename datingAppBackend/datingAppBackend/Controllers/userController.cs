@@ -177,6 +177,10 @@ namespace datingAppBackend.Controllers
                          select x).FirstOrDefault();
             int userId = 0;
 
+            if (users == null)
+            {
+                return Unauthorized("Wrong information provided");
+            }
             if (!users.isEnabled)
             {
                 return StatusCode(StatusCodes.Status423Locked,"Current User ("+users.email+") is locked by the admin, we will review your account just to make sure, keep an eye on your email inbox, or contact us");
