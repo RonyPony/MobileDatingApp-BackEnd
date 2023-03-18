@@ -68,17 +68,26 @@ namespace datingAppBackend.Controllers
                 while (!appropiateUserFound)
                 {
                     destiUser = getArandomUser(originUser,usersCount);
-                    bool hasmatch = validateExistingMatch(originUser, destiUser);
-                    bool tmpVal = validateFoundUser(destiUser, originUser);
-
-                    if (!hasmatch && tmpVal)
+                    if (destiUser == null)
                     {
-                        appropiateUserFound = true;
+                        //return NotFound("No users found based on preferences");
+                        appropiateUserFound = false;
                     }
                     else
                     {
-                        appropiateUserFound = false;
+                        bool hasmatch = validateExistingMatch(originUser, destiUser);
+                        bool tmpVal = validateFoundUser(destiUser, originUser);
+
+                        if (!hasmatch && tmpVal)
+                        {
+                            appropiateUserFound = true;
+                        }
+                        else
+                        {
+                            appropiateUserFound = false;
+                        }
                     }
+                    
                 }
                 return Ok(destiUser);
             }
