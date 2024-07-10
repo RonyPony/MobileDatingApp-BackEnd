@@ -30,7 +30,7 @@ namespace datingAppBackend.Controllers
           {
               return NotFound();
           }
-            return await _context.Users.Where(e=>e.isEnabled==true).ToListAsync();
+            return await _context.Users.Where(e=>e.isEnabled==true && e.deletedAccount==false).ToListAsync();
         }
 
         // GET: api/user/5
@@ -41,9 +41,9 @@ namespace datingAppBackend.Controllers
           {
               return NotFound();
           }
-            var user = await _context.Users.FindAsync(id);
+            User? user = await _context.Users.FindAsync(id);
 
-            if (user == null)
+            if (user == null || user.deletedAccount || !user.isEnabled)
             {
                 return NotFound();
             }
@@ -60,7 +60,12 @@ namespace datingAppBackend.Controllers
             {
                 return BadRequest();
             }
-            
+            User newUser = await _context.Users.FindAsync(id);
+            if (newUser == null || newUser.deletedAccount || !newUser.isEnabled)
+            {
+                return NotFound();
+            }
+
             _context.Entry(user).State = EntityState.Modified;
 
             try
@@ -141,8 +146,10 @@ namespace datingAppBackend.Controllers
 
             try
             {
-                var user = (from x in _context.Users
+                User? user = (from x in _context.Users
                              where x.email == email
+                             where x.isEnabled == true
+                             where x.deletedAccount == false
                              select x).FirstOrDefault();
                 if (user==null)
                 {
@@ -173,7 +180,7 @@ namespace datingAppBackend.Controllers
             var users = (from x in _context.Users
                          where x.email == userLogin.UserEmail
                          where x.Password == userLogin.Password
-                         
+                         where x.deletedAccount == false                      
                          select x).FirstOrDefault();
             int userId = 0;
 
@@ -223,7 +230,10 @@ namespace datingAppBackend.Controllers
             if (id!= null)
             {
                 User user = await _context.Users.FindAsync(id);
-
+                if (user.deletedAccount)
+                {
+                    return NotFound("User is deleted");
+                }
                 user.isEnabled = true;
 
                 _context.Users.Update(user);
@@ -255,7 +265,10 @@ namespace datingAppBackend.Controllers
             if (id != null)
             {
                 User user = await _context.Users.FindAsync(id);
-
+                if (user.deletedAccount)
+                {
+                    return NotFound("User is deleted");
+                }
                 user.isEnabled = false;
 
                 _context.Users.Update(user);
@@ -279,14 +292,21 @@ namespace datingAppBackend.Controllers
             {
                 return NotFound();
             }
-            var user = await _context.Users.FindAsync(id);
+            User? user = await _context.Users.FindAsync(id);
             if (user == null)
             {
                 return NotFound();
             }
 
-            _context.Users.Remove(user);
-            await _context.SaveChangesAsync();
+                user.deletedAccount = true;
+
+                _context.Users.Update(user);
+                await _context.SaveChangesAsync();
+
+                return Ok(user);
+            
+            //_context.Users.Remove(user);
+            //await _context.SaveChangesAsync();
 
             return NoContent();
         }

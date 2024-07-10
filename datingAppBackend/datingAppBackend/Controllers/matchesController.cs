@@ -46,6 +46,13 @@ namespace datingAppBackend.Controllers
                 return BadRequest();
             }
 
+            User originUser = await _context.Users.FindAsync(userId);
+
+            if (originUser == null)
+            {
+                return NotFound("Sent user not found");
+            }
+
             bool appropiateUserFound=false;
 
             try
@@ -62,7 +69,7 @@ namespace datingAppBackend.Controllers
                 {
                     return StatusCode(StatusCodes.Status404NotFound,"Not enough registered users");
                 }
-                User originUser = await _context.Users.FindAsync(userId);
+                
                 User destiUser = new User();
                 
                 while (!appropiateUserFound)
