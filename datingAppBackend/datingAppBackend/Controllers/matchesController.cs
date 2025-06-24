@@ -129,7 +129,7 @@ namespace datingAppBackend.Controllers
             if (originUser.sexualPreferenceId!=0)
             {
                 usr = _context.Users.OrderBy(r => Guid.NewGuid())
-                    .Where(r => r.sexualPreferenceId == originUser.sexualPreferenceId && r.id != originUser.id && r.isEnabled).FirstOrDefault();
+                    .Where(r => r.sexualPreferenceId == originUser.sexualPreferenceId && r.id != originUser.id && r.isEnabled && r.deletedAccount==false).FirstOrDefault();
                 return usr;
             }
             //int gui = Convert.ToInt32(Guid.NewGuid());
@@ -137,15 +137,15 @@ namespace datingAppBackend.Controllers
             int x = ran.Next(0, totalUsers);
             if (originUser.sex == "M")
             {
-                usr = _context.Users.Skip(x).Where(r => r.id != originUser.id && r.isEnabled && r.sex=="F").FirstOrDefault();
+                usr = _context.Users.Skip(x).Where(r => r.id != originUser.id && r.isEnabled && r.deletedAccount==false && r.sex=="F").FirstOrDefault();
             }
             else if (originUser.sex == "F")
             {
-                usr = _context.Users.Skip(x).Where(r => r.id != originUser.id && r.isEnabled && r.sex == "M").FirstOrDefault();
+                usr = _context.Users.Skip(x).Where(r => r.id != originUser.id && r.isEnabled && r.deletedAccount == false && r.sex == "M").FirstOrDefault();
             }
             else
             {
-                usr = _context.Users.Skip(x).Where(r => r.id != originUser.id && r.isEnabled).FirstOrDefault();
+                usr = _context.Users.Skip(x).Where(r => r.id != originUser.id && r.isEnabled && r.deletedAccount == false).FirstOrDefault();
             }
                 
             
@@ -239,6 +239,10 @@ namespace datingAppBackend.Controllers
             {
                 User originUser = await _context.Users.FindAsync(matchesDto.originUserId);
                 User destinUser = await _context.Users.FindAsync(matchesDto.finalUserId);
+                if (originUser.deletedAccount || destinUser.deletedAccount)
+                {
+                    return BadRequest("One of the user doesnt exists");
+                }
                 //bool hasMatch = validateExistingMatch(originUser,destinUser);
                 bool hasMatchBackwards = validateExistingMatch(destinUser, originUser);
                 if (hasMatchBackwards)

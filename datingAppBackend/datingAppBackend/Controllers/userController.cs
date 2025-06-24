@@ -47,7 +47,6 @@ namespace datingAppBackend.Controllers
             {
                 return NotFound();
             }
-
             return user;
         }
 
@@ -66,7 +65,7 @@ namespace datingAppBackend.Controllers
                 return NotFound();
             }
 
-            _context.Entry(user).State = EntityState.Modified;
+            //_context.Entry(user).State = EntityState.Modified;
 
             try
             {
